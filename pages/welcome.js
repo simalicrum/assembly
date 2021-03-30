@@ -50,9 +50,6 @@ export default function Home() {
         <div>Chat with us now!</div>
       </div>
       <Footer />
-      <div>
-
-      </div>
     </div>
   )
 }
