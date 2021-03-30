@@ -31,10 +31,6 @@ export default function Home() {
         <div><h2>Chat</h2><a href="#">Chat Now!</a></div>
         <div><h2>Phone</h2><div>Give us a shout:</div><div>206-523-4152</div></div>
       </div>
-      <div>
-        <h2>Assembly Digital</h2>
-        <p>Build a team of experts to make you something amazing.</p>
-      </div>
       <Footer />
     </div>
   )
