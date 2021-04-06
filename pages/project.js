@@ -7,8 +7,19 @@ import ProjectTiming from "../components/ProjectTiming";
 import ProjectBudget from "../components/ProjectBudget";
 import ProjectPeople from "../components/ProjectPeople";
 import React, { useEffect, useState } from "react";
+import { connectToDatabase } from "../util/mongodb";
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const { client } = await connectToDatabase();
+
+  const isConnected = await client.isConnected();
+
+  return {
+    props: { isConnected },
+  };
+}
+
+export default function Home({ isConnected }) {
   const [projectStep, setProjectStep] = useState();
   const [projectType, setProjectType] = useState("");
   const [projectTiming, setProjectTiming] = useState("");
@@ -53,6 +64,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
       <div>
         <h3>Define your project:</h3>
         <div>
@@ -64,8 +76,17 @@ export default function Home() {
         </div>
       </div>
       {projectStep}
+      {isConnected ? (
+        <p>You are connected to MongoDB</p>
+      ) : (
+        <p>
+          You are NOT connected to MongoDB. Check the <code>README.md</code> for
+          instructions.
+        </p>
+      )}
       <p>Project Type: {projectType}</p>
       <p>Project Timing: {projectTiming}</p>
+
       <Footer />
     </div>
   );
