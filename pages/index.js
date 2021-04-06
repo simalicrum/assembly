@@ -10,12 +10,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h1>Welcome to Assembly Digital</h1>
-      <h2>Got a project? Build your own team from the top agency talent.</h2>
-      <h2>You don't need a bunch of freelancers, you need a team.</h2>
-      <a href="#">I know what I want</a>
-      <p>or</p>
-      <a href="/help">I could use some help</a>
+      <div class="topcontainer">
+          <div class="welcome">Welcome to ASSEMBLY DIGITAL</div>
+          <div class="primarycopy">Got a project? Build your own team from the top agency talent.<br />
+          You don't need a bunch of freelancers, you need a team.</div>
+
+          <div class="maincta">
+              <div class="button"><a href="#">I know what I want</a></div>
+              <br/><br /><p>- OR -</p><br/>
+              <div class="button"><a href="/help">I could use some help</a></div>
+          </div>
+      </div>
       <p>
         <i>With Assembly I got to put together an amazing team, and they built me a great solution.”</i>
         <byline> - Michael Fryer, CMO Langosta Inc</byline>
