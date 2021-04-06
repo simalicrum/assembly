@@ -12,8 +12,39 @@ export default function Home() {
   const [projectStep, setProjectStep] = useState();
   const [projectType, setProjectType] = useState("");
   const [projectTiming, setProjectTiming] = useState("");
+  const nextStep = (next) => {
+    switch (next) {
+      case "ProjectInfo":
+        setProjectStep(<ProjectInfo nextStep={nextStep} />);
+        break;
+      case "ProjectType":
+        setProjectStep(
+          <ProjectType
+            projectType={projectType}
+            setProjectType={setProjectType}
+            nextStep={nextStep}
+          />
+        );
+        break;
+      case "ProjectTiming":
+        setProjectStep(
+          <ProjectTiming
+            projectTiming={projectTiming}
+            setProjectTiming={setProjectTiming}
+            nextStep={nextStep}
+          />
+        );
+        break;
+      case "ProjectBudget":
+        setProjectStep(<ProjectBudget nextStep={nextStep} />);
+        break;
+      case "ProjectPeople":
+        setProjectStep(<ProjectPeople nextStep={nextStep} />);
+        break;
+    }
+  };
   useEffect(() => {
-    setProjectStep(<ProjectInfo setProjectStep={setProjectStep} />);
+    setProjectStep(<ProjectInfo nextStep={nextStep} />);
   }, []);
   return (
     <div>
@@ -25,56 +56,16 @@ export default function Home() {
       <div>
         <h3>Define your project:</h3>
         <div>
-          <div
-            onClick={() =>
-              setProjectStep(<ProjectInfo setProjectStep={setProjectStep} />)
-            }
-          >
-            Project Info
-          </div>
-          <div
-            onClick={() =>
-              setProjectStep(
-                <ProjectType
-                  projectType={projectType}
-                  setProjectType={setProjectType}
-                  setProjectStep={setProjectStep}
-                />
-              )
-            }
-          >
-            Type of Project
-          </div>
-          <div
-            onClick={() =>
-              setProjectStep(
-                <ProjectTiming
-                  projectTiming={projectTiming}
-                  setProjectTiming={setProjectTiming}
-                  setProjectStep={setProjectStep}
-                />
-              )
-            }
-          >
-            Timing
-          </div>
-          <div
-            onClick={() =>
-              setProjectStep(<ProjectBudget setProjectStep={setProjectStep} />)
-            }
-          >
-            Budget
-          </div>
-          <div
-            onClick={() =>
-              setProjectStep(<ProjectPeople setProjectStep={setProjectStep} />)
-            }
-          >
-            People
-          </div>
+          <div onClick={() => nextStep("ProjectInfo")}>Project Info</div>
+          <div onClick={() => nextStep("ProjectType")}>Type of Project</div>
+          <div onClick={() => nextStep("ProjectTiming")}>Timing</div>
+          <div onClick={() => nextStep("ProjectBudget")}>Budget</div>
+          <div onClick={() => nextStep("ProjectPeople")}>People</div>
         </div>
       </div>
       {projectStep}
+      <p>Project Type: {projectType}</p>
+      <p>Project Timing: {projectTiming}</p>
       <Footer />
     </div>
   );

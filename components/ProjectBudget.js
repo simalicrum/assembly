@@ -1,18 +1,10 @@
-import ProjectPeople from "../components/ProjectPeople";
-
-export default function ProjectBudget({ setProjectStep }) {
+export default function ProjectBudget({ nextStep }) {
   return (
     <div>
       <h1>Website Redesign</h1>
       <p>Budget</p>
       Something should go here.
-      <button
-        onClick={() =>
-          setProjectStep(<ProjectPeople setProjectStep={setProjectStep} />)
-        }
-      >
-        Next
-      </button>
+      <button onClick={() => nextStep("ProjectPeople")}>Next</button>
       <button>I'm not sure.</button>
     </div>
   );

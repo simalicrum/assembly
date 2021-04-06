@@ -1,17 +1,18 @@
-import ProjectBudget from "../components/ProjectBudget";
-
 export default function ProjectTiming({
   projectTiming,
   setProjectTiming,
-  setProjectStep,
+  nextStep,
 }) {
   return (
     <div>
       <h1>Website Redesign</h1>
       <p>Alright, let's talk timing...</p>
       <form>
-        <select onChange={(e) => setProjectTiming(e.target.value)}>
-          <option>When do you want to start?</option>
+        <select
+          onChange={(e) => setProjectTiming(e.target.value)}
+          value={projectTiming}
+        >
+          <option value="">When do you want to start?</option>
           <option>ASAP</option>
           <option>In two weeks</option>
           <option>In a month</option>
@@ -29,13 +30,7 @@ export default function ProjectTiming({
           <option>However long it takes.</option>
         </select>
       </form>
-      <button
-        onClick={() =>
-          setProjectStep(<ProjectBudget setProjectStep={setProjectStep} />)
-        }
-      >
-        Next
-      </button>
+      <button onClick={() => nextStep("ProjectBudget")}>Next</button>
       <button>I'm not sure.</button>
     </div>
   );
