@@ -1,17 +1,17 @@
 export default function Footer() {
   return (
     <footer>
-      <div>
-        <h2>Assembly Digital</h2>
-        <p>Build a team of experts to make you something amazing.</p>
+      <div className="footerContainer">
+            <div className="assesmblyfooter">ASSEMBLY DIGITAL</div>
+            <div className="footerText">Build a team of experts to make you something amazing.</div>
       </div>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-        <div>205-523-4153</div>
+      <div className="footerNav">
+            <div className="footerlink"><a href="/about">About</a></div>
+            <div className="footerlink"><a href="/news">News</a></div>
+            <div className="footerlink"><a href="/blog">Blog</a></div>
+            <div className="footerlink"><a href="/contact">Contact</a></div>
+            <div className="phoneNumber">205-523-4153</div>
+      </div>  
     </footer>
   )
 }

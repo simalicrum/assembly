@@ -10,22 +10,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div class="topcontainer">
-          <div class="welcome">Welcome to ASSEMBLY DIGITAL</div>
-          <div class="primarycopy">Got a project? Build your own team from the top agency talent.<br />
+      <div className="topcontainer">
+          <div className="welcome">Welcome to ASSEMBLY DIGITAL</div>
+          <div className="primarycopy">Got a project? Build your own team from the top agency talent.<br />
           You don't need a bunch of freelancers, you need a team.</div>
 
-          <div class="maincta">
-              <div class="button"><a href="#">I know what I want</a></div>
+          <div className="maincta">
+              <div className="button"><a href="project">I know what I want</a></div>
               <br/><br /><p>- OR -</p><br/>
-              <div class="button"><a href="/help">I could use some help</a></div>
+              <div className="button"><a href="help">I could use some help</a></div>
           </div>
       </div>
-      <p>
-        <i>With Assembly I got to put together an amazing team, and they built me a great solution.”</i>
-        <byline> - Michael Fryer, CMO Langosta Inc</byline>
-      </p>
-      <div>
+      <div className="quotecontainer">
+        <div className="quote">"With Assembly I got to put together an amazing team, and they built me a great solution.”</div>
+        <div className="byline"> - Michael Fryer, CMO Langosta Inc</div>
+      </div>
+      <div className="rtbcontainer"> 
         <h3>Why choose Assembly?</h3>
         <div>
           <div>Get a team</div>
@@ -44,7 +44,7 @@ export default function Home() {
           <div>We manage our teams work, ensure quality is up to snuff, and make sure you’re getting what you need.</div>
         </div>
       </div>
-      <div>
+      <div className="rtbcontainer">
         <h3>How does Assembly work? It’s easy.</h3>
         <ol>
           <li>Tell us about your project</li>
