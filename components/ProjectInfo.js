@@ -1,4 +1,6 @@
-export default function ProjectInfo() {
+import ProjectType from "../components/ProjectType";
+
+export default function ProjectInfo({ setProjectStep }) {
   return (
     <div>
       <h1>Your Project</h1>
@@ -14,7 +16,13 @@ export default function ProjectInfo() {
         </div>
         <textarea placeholder="Hi"></textarea>
       </form>
-      <button>Next</button>
+      <button
+        onClick={() =>
+          setProjectStep(<ProjectType setProjectStep={setProjectStep} />)
+        }
+      >
+        Next
+      </button>
     </div>
-  )
+  );
 }

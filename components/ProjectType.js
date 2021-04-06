@@ -1,20 +1,28 @@
-export default function ProjectType() {
+import ProjectTiming from "../components/ProjectTiming";
+
+export default function ProjectType({
+  projectType,
+  setProjectType,
+  setProjectStep,
+}) {
   return (
     <div>
       <h1>Website Redesign</h1>
       <p>You’ve named your project now...what sorta project is it?</p>
       <form>
-        <select>
-          <option>Website</option>
-          <option>Marketing Campaign</option>
-          <option>Product Launch</option>
-          <option>Strategic Planning</option>
-          <option>eCommerce Site</option>
-          <option>Marketing Automation Build</option>
-          <option>SEO / SEM Work</option>
-          <option>UX Optimization</option>
+        <select onChange={(e) => setProjectType(e.target.value)}>
+          <option>Choose your project type</option>
+          <option value="website">Website</option>
+          <option value="marketing">Marketing Campaign</option>
+          <option value="launch">Product Launch</option>
+          <option value="planning">Strategic Planning</option>
+          <option value="ecommerce">eCommerce Site</option>
+          <option value="automation">Marketing Automation Build</option>
+          <option value="seo">SEO / SEM Work</option>
+          <option value="ux">UX Optimization</option>
         </select>
         <select>
+          <option>Sub-type (choose a project type first)</option>
           <option>Brand Site</option>
           <option>Catalog Site</option>
           <option>Blog Site</option>
@@ -25,8 +33,19 @@ export default function ProjectType() {
           <option>Interactive Site</option>
         </select>
       </form>
-      <button>Next</button>
+      <button
+        onClick={() =>
+          setProjectStep(
+            <ProjectTiming
+              setProjectTiming={setProjectTiming}
+              setProjectStep={setProjectStep}
+            />
+          )
+        }
+      >
+        Next
+      </button>
       <button>I'm not sure.</button>
     </div>
-  )
+  );
 }
