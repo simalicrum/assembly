@@ -8,12 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-<<<<<<< HEAD
     "mongodb": "^3.6.6",
     "next": "10.0.9",
-=======
-    "next": "^10.0.9",
->>>>>>> ee51fb6f12132d28f8b16634fc8e6ee75a52c088
     "react": "17.0.2",
     "react-dom": "17.0.2"
   }
